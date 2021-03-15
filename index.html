@@ -17,9 +17,26 @@
     <div class="content-wrapper">
         <h1 class="text-center">Hello, world!</h1>
         <p class="text-center">Contact <strong>@Melumi#5395 (@640714673045504020)</strong></p>
-        <p align="center">2021 Freebird Community</p>
+        <p class="text-center">2021 Freebird Community</p>
+        <div class="navbar navbar-static-bottom">
+            <ul class="navbar-nav ml-auto"> <!-- ml-auto = margin-left: auto -->
+                <li class="nav-item">
+                    <a href="https://rudrecciah.dev/" class="nav-link">the best person of the persons</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                &copy; <span id="year"></span>
+            </span>
+        </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+<script>
+    const date = Date();
+    const dateSplit = date.split(" ");
+    const year = dateSplit[3];
+    document.getElementById("year").innerText = `Melumi ${year}, All rights reserved`;
+    console.log(date);
+</script>
 </body>
 </html>
