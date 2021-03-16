@@ -1,7 +1,6 @@
-# Church of Raxus
-PRAISE THE CAT FROM BUMFUCK SOUTH CENTRAL PENNSYLVANIA
-HE JUST HAS SO VERY MANY AMISH FARMS BEHIND HIS PROPERTY
-AMEN
+# The Church of Raxus
+The official website for the Church of Raxus.
+Dorime 🙏
 
 
 [SEO](https://rudrecciah.dev)
