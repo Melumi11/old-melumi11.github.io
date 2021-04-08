@@ -9,37 +9,49 @@
     </head>
 
     <style>
-        p {margin-left: 110px; margin-right: 110px; font-size: 1.5em}
+        p {margin-left: 110px; margin-right: 110px; font-size: 1.5em; text-align: center}
         @font-face {font-family: "OpenSans";
             src: url(OpenSans-Regular.ttf)}
 
+        .fake {color:darkblue; font-size: 1em; font-family: OpenSans}
+
         body {background-image: linear-gradient(to right, crimson, white 25%, white 75%, crimson);
-        margin: 0}
+        margin: 0; text-align: center}
         nav {background-color: darkgoldenrod;
-        padding-left: 0; min-height: 5em; text-align: center}
+        padding-left: 0; min-height: 5em}
+
+        @media (max-width: 321px) {.some-class{font-size: 0.5em;}}
     </style>
 
     <body>
         <div>
             <nav>
-                <h1 style="font-size: 4em; font-family: OpenSans; margin-block-start: 0em; margin-block-end: 0em; padding-top:0.5em; padding-bottom:0.5em">Melumi iColor</h1>
+                <h1 class="fake" style="font-size: 4em; margin-block-start: 0em; margin-block-end: 0em; padding-top:0.5em; padding-bottom:0.5em">Melumi iColor</h1>
             </nav>
         </div>
         
         <div>
-            <h2 style="font-size: 2em; text-align: center; font-family: OpenSans; margin-block-end: 1em">The <i>Ultimate</i> Colored Eyes</h2>
+            <h2 class="fake" style="margin-block-end: 1em; font-size: 2em">The <i>Ultimate</i> Colored Eyes</h2>
         </div>
 
         <div style="width: 30%; margin: auto">
             <img src="Eye1.png" alt = "Eye pic should be here" width= 100%>
         </div>
 
-        <div style="text-align: center">
+        <div class="fake">
             <p><i>The only way to properly explain, is with words.</i></p>
             <br>
             <p>Are you tired of having boring, single-colored eyes?</p>
-            <p>Here at Melumi Eyes, our team of genius scientists have worked day and night to bring you the latest in colored eye technology.</p>
-            <p>Our latest breakthrough in color-changing eye technology allows our customers to...</p>
+            <p>Here at Melumi Eyes, our team of genius scientists have worked day and night to bring you the latest in colored eye technology. Our latest breakthrough in color-changing eye technology allows our customers to not only be able to change their eye color at will, but also obtain the power to completely ignore racial differences, seeing everybody the same way.</p>
+        </div>
+        <br>
+        <div>
+            <p>In reality, no one is immune from racial bias. Everyone's view of the world is at least partially based on race. There is no such thing as racially impartial and nobody is free from their own prejudices. Humans evolved this way to keep themselves safe, and no technology exists in the world that can change this fact. As famous writer Kan Gao once remarked, "I think all our memories, and everything in it… can be nothing but the fiction we tell ourselves."</p>
+        </div>
+        <br>
+        <div class="fake">
+            <p>If you're worried about whether our product is right for you, have no fear. No matter if you're a kind-hearted philanthropist or just a common man who doesn't want to be called racist, these eyes are perfect for you. We promise that with our iColors, you will never have to fear confrontations with people of other races, and you will be able to treat them with respect.</p>
+            <p>Gone are the days where you were afraid of offending people, not knowing what you did wrong truly feeling sorry. For just a small fee, your life will be free of worry forever.</p>
         </div>
 
         <div style="width:40%; margin:auto">
@@ -49,8 +61,8 @@
             </video>
         </div>
 
-        <div style="text-align: center">
-            <p>Here is an example of one of the amazing eye cases we have created.</p>
+        <div class="fake">
+            <p>Here is an example of one of the amazing eye cases we have created:</p>
         </div>
 
         <div class="sketchfab-embed-wrapper" style="width:40%; margin: auto">
@@ -58,8 +70,8 @@
             </iframe>
         </div>
 
-        <div style="text-align: center">
-            <p>Lmao</p>
+        <div>
+            <p>Lol</p>
         </div>
     </body>
 </html>
