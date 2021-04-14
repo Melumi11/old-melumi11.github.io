@@ -48,7 +48,7 @@
         <!-- Options -->
         <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
             <li class="nav-item"> <!-- Use "nav-iten active" if it's the current page -->
-                <a href="https://archive.org/details/savurduyarrani/" target="_blank" class="nav-link">Savurdu Yarrani</a>
+                <a href="https://www.melumi.ml/#about-title" target="_blank" class="nav-link">About</a>
             </li>
             <!-- Dropdown item -->
             <li class="nav-item dropdown with-arrow">
@@ -83,6 +83,10 @@
                   </div>
                 </div>
               </li>
+            <!-- Savurdu button -->
+            <button class="btn btn-block" onclick="playSavurdu()" type="button">
+                <i class="fas fa-play"></i>
+            </button>
         </ul>
     </nav>
     <!-- Navbar end -->
@@ -91,16 +95,16 @@
     <div class="sidebar">
         <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
         <div class="sidebar-menu">
-            <!-- Sidebar brand -->
+            <!-- Sidebar brand 
             <a href="https://www.melumi.ml/" class="sidebar-brand">
                 <img src="images/favicon.png" alt="favicon">
                 Melumi.ml
-            </a>
+            </a> -->
             <!-- Search box -->
             <div class="sidebar-content">
-                <input type="text" class="form-control" placeholder="This doesn't do anything">
+                <input type="text" class="form-control" placeholder="Type text here">
                 <div class="mt-10 font-size-12"> <!-- mt-10 = margin-top: 1rem (10px), font-size-12 = font-size: 1.2rem (12px) -->
-                Press <kbd>nothing</kbd> to do nothing
+                Press <kbd>control</kbd> + <kbd>W</kbd> to exit
                 </div>
             </div>
             <!-- Sidebar links (with icons) and titles -->
@@ -173,14 +177,10 @@
     <div class="content-wrapper">
         <div class="content">
             <h1 class="text-center">Melumi.ml</h1>
-            <div class="text-center">
-                <img width="20%" src="images/favicon.png" alt="favicon">
-            </div>
-            <br>
-            <!-- Savurdu Yarrani 
-            <div class="d-flex h-three-quarter align-items-center justify-content-center flex-column">
-                <iframe src="https://archive.org/embed/savurduyarrani" class="w-three-quarter mw-full h-full m-0" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
-            </div> -->
+            <!-- Savurdu Yarrani -->
+            <audio loop id="savurdu">
+                <source src="https://archive.org/download/savurduyarranimp370k/Savurdu%20Yarrani%28MP3_70K%29.mp3" type="audio/mpeg">
+            </audio>
             <!-- My Projects -->
             <h1 id="my-projects" class="content-title text-center">My Projects</h1>
             <!-- About me -->
@@ -210,6 +210,8 @@
 <!-- Page wrapper end -->
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 <script>
+    function playSavurdu() {document.getElementById("savurdu").play();} 
+
     const date = Date();
     const dateSplit = date.split(" ");
     const year = dateSplit[3];
