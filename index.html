@@ -23,11 +23,16 @@
     <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/2f5edf07d6.js" crossorigin="anonymous"></script>
 </head>
-<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars dark-mode">
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-set-preferred-mode-onload="true">
 <!-- Everything -->
 <div class="page-wrapper with-navbar with-sidebar">
-    <!-- NAVBAR -->
+    <!-- Sticky alerts (toasts) -->
+    <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
+    <div class="sticky-alerts"></div>
+
+    <!-- Navbar start -->
     <nav class="navbar">
+        <!-- Reference: https://www.gethalfmoon.com/docs/navbar -->
         <!-- Sidebar button -->
         <div class="navbar-content">
             <button id="toggle-sidbar-btn" class="btn btn-action" type="button" onclick="halfmoon.toggleSidebar()">
@@ -35,6 +40,7 @@
                 <span class="sr-only">Toggle sidebar</span> <!-- sr-only = show only on screen readers -->
             </button>
         </div>
+        <!-- Brand -->
         <a href="https://www.melumi.ml/" class="navbar-brand">
             <img src="images/favicon.png" alt="favicon">
             Melumi.ml
@@ -42,24 +48,28 @@
         <!-- Options -->
         <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
             <li class="nav-item"> <!-- Use "nav-iten active" if it's the current page -->
-                <a href="https://archive.org/details/savurduyarrani/" class="nav-link">Savurdu Yarrani</a>
+                <a href="https://archive.org/details/savurduyarrani/" target="_blank" class="nav-link">Savurdu Yarrani</a>
             </li>
-            <!-- Dropdown option -->
+            <!-- Dropdown item -->
             <li class="nav-item dropdown with-arrow">
                 <a class="nav-link" data-toggle="dropdown" id="nav-link-dropdown-toggle">
                     My Projects
                     <i class="fa fa-angle-down ml-5" aria-hidden="true"></i> <!-- ml-5= margin-left: 0.5rem (5px) -->
                 </a>
-                <!-- Dropdown option -->
+                <!-- Dropdown options -->
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-link-dropdown-toggle">
-                    <a href="https://www.melumi.ml/" class="dropdown-item active">My Website</a>
-                    <a href="https://github.com/Melumi11/Fegg" class="dropdown-item">Fegg</a>
-                    <!-- With a "New" button -->
-                    <a href="https://www.melumi.ml/eye/" class="dropdown-item">
+                    <!-- Melumi.ml -->
+                    <a href="https://github.com/Melumi11/melumi11.github.io" target="_blank" class="dropdown-item active">My Website</a>
+                    <!-- Fegg -->
+                    <a href="https://github.com/Melumi11/Fegg" target="_blank" class="dropdown-item">Fegg</a>
+                    <!-- iColor -->
+                    <a href="https://www.melumi.ml/eye/" target="_blank" class="dropdown-item">
                         iColor
-                        <strong class="badge badge-success float-right">New</strong>
+                        <!-- "New" icon
+                        <strong class="badge badge-success float-right">New</strong> -->
                     </a>
                     <div class="dropdown-divider"></div>
+                    <!-- "More" button -->
                     <div class="dropdown-content">
                         <!-- <a href="#" class="btn btn-block" role="button"> -->
                         <button id="toggle-sidbar-btn" class="btn btn-block" type="button" onclick="halfmoon.toggleSidebar()">
@@ -73,8 +83,11 @@
               </li>
         </ul>
     </nav>
-    <!-- SIDEBAR -->
+    <!-- Navbar end -->
+
+    <!-- Sidebar start -->
     <div class="sidebar">
+        <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
         <div class="sidebar-menu">
             <!-- Sidebar brand -->
             <a href="https://melumi.ml/" class="sidebar-brand">
@@ -91,18 +104,21 @@
             <!-- Sidebar links (with icons) and titles -->
             <h5 class="sidebar-title">Information</h5>
             <div class="sidebar-divider"></div>
+            <!-- Melumi.ml -->
             <a href="https://melumi.ml/" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <img width="60%" src="images/favicon.png" alt="favicon">
                 </span>
                 Melumi.ml
             </a>
-            <a href="https://melumi.ml/" class="sidebar-link sidebar-link-with-icon">
+            <!-- About me -->
+            <a href="https://melumi.ml/#about-title" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <i class="fas fa-address-card"></i>
                 </span>
                 About me
             </a>
+            <!-- Contact -->
             <a href="https://melumi.ml/" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <i class="fas fa-comments"></i>
@@ -113,21 +129,21 @@
             <h5 class="sidebar-title">Projects</h5>
             <div class="sidebar-divider"></div>
             <!-- Fegg -->
-            <a href="https://github.com/Melumi11/Fegg" class="sidebar-link sidebar-link-with-icon">
+            <a href="https://github.com/Melumi11/Fegg" target="_blank" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <img width="60%" src="images/fegg.png" alt="fegg pic">
                 </span>
                 Fegg
             </a>
             <!-- iColor -->
-            <a href="https://melumi.ml/eye/" class="sidebar-link sidebar-link-with-icon">
+            <a href="https://melumi.ml/eye/" target="_blank" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <img width="60%" src="eye/Eye1.png" alt="eye pic">
                 </span>
                 iColor
             </a>
             <!-- Website github -->
-            <a href="https://github.com/Melumi11/melumi11.github.io" class="sidebar-link sidebar-link-with-icon">
+            <a href="https://github.com/Melumi11/melumi11.github.io" target="_blank" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <i class="fab fa-github"></i>
                 </span>
@@ -135,22 +151,31 @@
             </a>
             </div>
     </div>
-    <!-- CONTENT -->
+    <!-- Sidebar end -->
+
+    <!-- Content wrapper start -->
     <div class="content-wrapper">
-        <h1 class="text-center">Melumi.ml</h1>
-        <div class="d-flex h-three-quarter align-items-center justify-content-center flex-column">
-            <iframe src="https://archive.org/embed/savurduyarrani" class="w-three-quarter mw-full h-full m-0" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+        <div class="content">
+            <h1 class="text-center">Melumi.ml</h1>
+            <!-- Savurdu Yarrani 
+            <div class="d-flex h-three-quarter align-items-center justify-content-center flex-column">
+                <iframe src="https://archive.org/embed/savurduyarrani" class="w-three-quarter mw-full h-full m-0" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+            </div> -->
+            <!-- About me -->
+            <h1 id="about-title" class="content-title text-center">About me</h1>
+            <p class="text-center">Hi, my name is Melumi and I like to make cool things! I have experience using Python, Java, and HTML. My discord bot Fegg was made using Python and I'm currently learning how to build websites with HTML. Besides that, I enjoy playing story games and listening to music, mellow or otherwise.</p>
+            <!-- Contact -->
+            <h1 id="contact-title" class="content-title text-center">Contact</h1>
+            <p class="text-center">Discord: <strong>@Melumi#5395 (@640714673045504020)</strong></p>
         </div>
-        <p class="text-center">Contact: <strong>@Melumi#5395 (@640714673045504020)</strong></p>
-        
         <!-- Navbar bottom -->
         <div class="navbar navbar-static-bottom">
             <ul class="navbar-nav ml-auto"> <!-- ml-auto = margin-left: auto -->
                 <!-- <li class="nav-item">
-                    <a href="https://www.melumi.ml/eye/" class="nav-link">iColor</a>
+                    <a href="https://www.melumi.ml/eye/" target="_blank" class="nav-link">iColor</a>
                 </li> -->
                 <li class="nav-item">
-                    <a href="https://rudrecciah.dev/" class="nav-link">RudRecciah</a>
+                    <a href="https://rudrecciah.dev/" target="_blank" class="nav-link">RudRecciah</a>
                 </li>
             </ul>
             <span class="navbar-text">
@@ -158,6 +183,7 @@
             </span>
         </div>
     </div>
+    <!-- Content wrapper end -->
 </div>
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 <script>
