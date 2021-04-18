@@ -84,7 +84,7 @@
                 </div>
               </li>
             <!-- Savurdu button -->
-            <button class="btn btn-block" onclick="playSavurdu()" type="button">
+            <button class="btn btn-block" onclick="playMemeAudio()" type="button">
                 <i class="fas fa-play"></i>
             </button>
         </ul>
@@ -177,8 +177,8 @@
     <div class="content-wrapper">
         <div class="content">
             <h1 class="text-center">Melumi.ml</h1>
-            <!-- Savurdu Yarrani -->
-            <audio loop id="savurdu">
+            <!-- Random Audio Player -->
+            <audio loop id="memeAudio">
                 <source src="https://archive.org/download/savurduyarranimp370k/Savurdu%20Yarrani%28MP3_70K%29.mp3" type="audio/mpeg">
             </audio>
             <!-- My Projects -->
@@ -210,7 +210,9 @@
 <!-- Page wrapper end -->
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 <script>
-    function playSavurdu() {document.getElementById("savurdu").play();} 
+    // ;)
+    if (Math.random() > 0.5) {document.getElementById("memeAudio").setAttribute("src", "https://r4---sn-hp57kn6y.googlevideo.com/videoplayback?expire=1618806465&ei=YbJ8YOa7GMWSkATP_qzQCQ&ip=195.181.163.28&id=o-ALxm1hwb-RGkLsq80mzNXs7FtzZfx1eSJVoxY_LFCyUj&itag=251&source=youtube&requiressl=yes&mh=7c&mm=31%2C26&mn=sn-hp57kn6y%2Csn-5uaeznrz&ms=au%2Conr&mv=m&mvi=4&pl=24&initcwndbps=1037500&vprv=1&mime=audio%2Fwebm&ns=KdryScvnLLs5uRBbkoKTmkIF&gir=yes&clen=3438483&dur=212.061&lmt=1578935058552556&mt=1618784680&fvip=4&keepalive=yes&fexp=24001373%2C24007246&c=WEB&txp=5531432&n=sTNoRJFes4zU8-&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAIOa2_vBmtQvW0dpKBHLdlobq1XJHWXxGcGvqmuisr9BAiAaJ663Ofd4vroLC8zKsssU1AHCfhvL4AYiQx0drDRpAg%3D%3D&sig=AOq0QJ8wRQIgIUOWq6OXCQccZrqaDbANPI56jT1cdOPljLBO1e86QWICIQDpIJ5oOwoREDdNlK7oMgZfyqNlIcfZkFZR_3gBW3nfhw==")}
+    function playMemeAudio() {document.getElementById("memeAudio").play();} 
 
     const date = Date();
     const dateSplit = date.split(" ");
