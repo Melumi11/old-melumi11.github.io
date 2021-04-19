@@ -25,7 +25,7 @@
 </head>
 <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-set-preferred-mode-onload="true">
 <!-- Page wrapper start -->
-<div class="page-wrapper with-navbar with-sidebar">
+<div class="page-wrapper with-navbar with-sidebar" data-sidebar-hidden="hidden">
     <!-- Sticky alerts (toasts) -->
     <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
     <div class="sticky-alerts"></div>
@@ -48,7 +48,7 @@
         <!-- Options -->
         <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
             <li class="nav-item"> <!-- Use "nav-iten active" if it's the current page -->
-                <a href="https://www.melumi.ml/#about-title" target="_blank" class="nav-link">About</a>
+                <a href="#about-title" target="_blank" class="nav-link">About</a>
             </li>
             <!-- Dropdown item -->
             <li class="nav-item dropdown with-arrow">
@@ -65,7 +65,7 @@
                     <!-- For Em -->
                     <a href="https://www.melumi.ml/for-em/" target="_blank" class="dropdown-item">For Em</a>
                     <!-- iColor -->
-                    <a href="https://www.melumi.ml/eye/" target="_blank" class="dropdown-item">
+                    <a href="https://melumi11.github.io/white-card-project/" target="_blank" class="dropdown-item">
                         iColor
                         <!-- "New" icon
                         <strong class="badge badge-success float-right">New</strong> -->
@@ -73,7 +73,7 @@
                     <div class="dropdown-divider"></div>
                     <!-- "More" button -->
                     <div class="dropdown-content">
-                        <a href="https://www.melumi.ml/#my-projects" class="btn btn-block" role="button"> 
+                        <a href="#my-projects" class="btn btn-block" role="button"> 
                             More Info <i class="fa fa-angle-right ml-5" aria-hidden="true"></i>
                         <!-- <button id="toggle-sidbar-btn" class="btn btn-block" type="button" onclick="halfmoon.toggleSidebar()">
                             More
@@ -118,21 +118,21 @@
                 Melumi.ml
             </a>
             <!-- My projects -->
-            <a href="https://www.melumi.ml/#my-projects" class="sidebar-link sidebar-link-with-icon">
+            <a href="#my-projects" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <i class="fas fa-briefcase"></i>
                 </span>
                 My Projects
             </a>
             <!-- About me -->
-            <a href="https://www.melumi.ml/#about-title" class="sidebar-link sidebar-link-with-icon">
+            <a href="#about-title" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <i class="fas fa-address-card"></i>
                 </span>
                 About me
             </a>
             <!-- Contact -->
-            <a href="https://www.melumi.ml/#contect-title" class="sidebar-link sidebar-link-with-icon">
+            <a href="#contect-title" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <i class="fas fa-comments"></i>
                 </span>
@@ -156,9 +156,9 @@
                 For Em
             </a>
             <!-- iColor -->
-            <a href="https://www.melumi.ml/eye/" target="_blank" class="sidebar-link sidebar-link-with-icon">
+            <a href="https://melumi11.github.io/white-card-project/" target="_blank" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
-                    <img width="60%" src="eye/Eye1.png" alt="eye pic">
+                    <img width="60%" src="images/eye.png" alt="eye pic">
                 </span>
                 iColor
             </a>
@@ -183,9 +183,61 @@
             </audio>
             <!-- My Projects -->
             <h1 id="my-projects" class="content-title text-center">My Projects</h1>
+            <div class="container-fluid"> <!-- Cards -->
+                <div class="row text-center">
+                    <!-- Fegg -->
+                    <div class="col-sm">
+                        <div class="card ml-5"> <!-- p-0 = padding: 0 -->
+                            <img src="images/fegg.png" class="img-fluid rounded-top" style="width:70%" alt="Fegg pic"> <!-- rounded-top = rounded corners on the top -->
+                            <div style="margin:var(--content-and-card-spacing)"></div>
+                            <h2 class="card-title">Fegg Bot</h2>
+                            <p>My custom discord bot that features a multiplayer fighting game. The players attack each other with dice rolls, and this bot is good for roleplaying fights. The bot is written in python using discord.py and it was made for a private server I'm in.</p>
+                            <div class="text-right"> <!-- text-right = text-align: right -->
+                            <a href="https://github.com/Melumi11/Fegg" class="btn">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- For Em -->
+                    <div class="col-sm">
+                        <div class="card ml-5"> <!-- p-0 = padding: 0 -->
+                            <img src="for-em/favicon.png" class="img-fluid rounded-top" alt="Present pic"> <!-- rounded-top = rounded corners on the top -->
+                            <div style="margin:var(--content-and-card-spacing)"></div>
+                            <h2 class="card-title">For Em</h2>
+                            <p>A <i>To The Moon</i> fangame I made for a friend. It's a short 2d sidescrolling platformer made using the Godot engine and gdscript. The Neil and Eva sprites belong to Freebird Games.</p>
+                            <div class="text-right"> <!-- text-right = text-align: right -->
+                            <a href="https://www.melumi.ml/for-em/" class="btn">Play here</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- iColor -->
+                    <div class="col-sm">
+                        <div class="card ml-5"> <!-- p-0 = padding: 0 -->
+                            <img src="images/eye.png" class="img-fluid rounded-top" alt="Eye pic"> <!-- rounded-top = rounded corners on the top -->
+                            <div style="margin:var(--content-and-card-spacing)"></div>
+                            <h2 class="card-title">Melumi iColor</h2>
+                            <p>The first HTML webpage I created by myself. It was for a school project and the eye animation was made in Blender. This card may be replaced when I have more to show.</p>
+                            <div class="text-right"> <!-- text-right = text-align: right -->
+                            <a href="https://melumi11.github.io/white-card-project/" class="btn">View site</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Melumi.ml Github -->
+                    <div class="col-sm">
+                        <div class="card ml-5"> <!-- p-0 = padding: 0 -->
+                            <img src="images/favicon.png" class="img-fluid rounded-top" alt="Favicon"> <!-- rounded-top = rounded corners on the top -->
+                            <div style="margin:var(--content-and-card-spacing)"></div>
+                            <h2 class="card-title">Melumi.ml</h2>
+                            <p>The website you're viewing right now! The source code for this website including all subdirectories is available below.</p>
+                            <div class="text-right"> <!-- text-right = text-align: right -->
+                            <a href="https://github.com/Melumi11/melumi11.github.io" class="btn">Source code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- About me -->
             <h1 id="about-title" class="content-title text-center">About me</h1>
-            <p class="text-center">Hi, my name is Melumi and I like to make cool things! I have experience using Python, Java, and HTML. My discord bot Fegg was made using Python and I'm currently learning how to build websites with HTML. Besides that, I enjoy playing story games and listening to music, mellow or otherwise.</p>
+            <p class="text-center">Hi, my name is Melumi and I like to make cool things! I have experience using Python, Java, HTML, and some other things like Blender. I'm currently learning how to build websites with HTML, and I started making this very webpage not long ago! Besides coding, I enjoy playing videogames and listening to music.</p>
             <!-- Contact -->
             <h1 id="contact-title" class="content-title text-center">Contact</h1>
             <p class="text-center">Discord: <strong>@Melumi#5395 (@640714673045504020)</strong></p>
@@ -211,7 +263,7 @@
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 <script>
     // ;)
-    if (Math.random() > 0.5) {document.getElementById("memeAudio").setAttribute("src", "https://r4---sn-hp57kn6y.googlevideo.com/videoplayback?expire=1618806465&ei=YbJ8YOa7GMWSkATP_qzQCQ&ip=195.181.163.28&id=o-ALxm1hwb-RGkLsq80mzNXs7FtzZfx1eSJVoxY_LFCyUj&itag=251&source=youtube&requiressl=yes&mh=7c&mm=31%2C26&mn=sn-hp57kn6y%2Csn-5uaeznrz&ms=au%2Conr&mv=m&mvi=4&pl=24&initcwndbps=1037500&vprv=1&mime=audio%2Fwebm&ns=KdryScvnLLs5uRBbkoKTmkIF&gir=yes&clen=3438483&dur=212.061&lmt=1578935058552556&mt=1618784680&fvip=4&keepalive=yes&fexp=24001373%2C24007246&c=WEB&txp=5531432&n=sTNoRJFes4zU8-&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAIOa2_vBmtQvW0dpKBHLdlobq1XJHWXxGcGvqmuisr9BAiAaJ663Ofd4vroLC8zKsssU1AHCfhvL4AYiQx0drDRpAg%3D%3D&sig=AOq0QJ8wRQIgIUOWq6OXCQccZrqaDbANPI56jT1cdOPljLBO1e86QWICIQDpIJ5oOwoREDdNlK7oMgZfyqNlIcfZkFZR_3gBW3nfhw==")}
+    if (Math.random() > 0.4) {document.getElementById("memeAudio").setAttribute("src", "https://r4---sn-hp57kn6y.googlevideo.com/videoplayback?expire=1618806465&ei=YbJ8YOa7GMWSkATP_qzQCQ&ip=195.181.163.28&id=o-ALxm1hwb-RGkLsq80mzNXs7FtzZfx1eSJVoxY_LFCyUj&itag=251&source=youtube&requiressl=yes&mh=7c&mm=31%2C26&mn=sn-hp57kn6y%2Csn-5uaeznrz&ms=au%2Conr&mv=m&mvi=4&pl=24&initcwndbps=1037500&vprv=1&mime=audio%2Fwebm&ns=KdryScvnLLs5uRBbkoKTmkIF&gir=yes&clen=3438483&dur=212.061&lmt=1578935058552556&mt=1618784680&fvip=4&keepalive=yes&fexp=24001373%2C24007246&c=WEB&txp=5531432&n=sTNoRJFes4zU8-&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAIOa2_vBmtQvW0dpKBHLdlobq1XJHWXxGcGvqmuisr9BAiAaJ663Ofd4vroLC8zKsssU1AHCfhvL4AYiQx0drDRpAg%3D%3D&sig=AOq0QJ8wRQIgIUOWq6OXCQccZrqaDbANPI56jT1cdOPljLBO1e86QWICIQDpIJ5oOwoREDdNlK7oMgZfyqNlIcfZkFZR_3gBW3nfhw==")}
     function playMemeAudio() {document.getElementById("memeAudio").play();} 
 
     const date = Date();
