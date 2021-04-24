@@ -241,16 +241,31 @@
             <div class="m-auto text-center" style="width:80%">
                 <p>Hi, my name is Melumi and I like to make cool things! I have experience using Python, Java, HTML, and some other things like Blender. I'm currently learning how to build websites with HTML, and I started making this very webpage not long ago! Besides coding, I enjoy playing videogames and listening to music.</p>
             </div>
+            <div class="spacer-lg"></div>
             <!-- Contact -->
             <h1 id="contact-title" class="content-title text-center">Contact</h1>
+            <div class="container">
+                <div class="form-group">
+                    <p class="text-center">Send me a message:</p>
+                    <label for="form-writer" class="required">Your Name</label>
+                    <input id="form-name" type="text" class="form-control" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="form-message" class="required">Your Message</label>
+                    <textarea id="form-message" class="form-control" placeholder="Your message"></textarea>
+                </div>
+                <div class="text-center">
+                    <button id="form-submitButton" type="button" class="btn btn-primary btn-block" style="width:auto; margin:auto" onclick="prepareFormData()">Send Message</button>
+                </div>
+            </div>
             <p class="text-center">Discord: <strong>@Melumi#5395 (@640714673045504020)</strong></p>
             <!-- Social Links -->
             <div class="text-center">
                 <div class="btn-group" role="group" aria-label="Accounts">
-                    <a target="_blank" href="https://github.com/Melumi11/" class="btn btn-primary btn-rounded"><i class="fab fa-github" aria-hidden="true"></i></a>
-                    <a target="_blank" href="https://steamcommunity.com/id/melumi11/" class="btn btn-primary"><i class="fab fa-steam" aria-hidden="true"></i></a>
-                    <a target="_blank" href="https://www.youtube.com/channel/UCpVnl0qPPJEF9y-K7TfE8Ow" class="btn btn-primary"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-                    <a target="_blank" href="https://twitter.com/Melumi11" class="btn btn-primary btn-rounded"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://github.com/Melumi11/" class="btn btn-secondary btn-rounded"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://steamcommunity.com/id/melumi11/" class="btn btn-secondary"><i class="fab fa-steam" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCpVnl0qPPJEF9y-K7TfE8Ow" class="btn btn-secondary"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://twitter.com/Melumi11" class="btn btn-secondary btn-rounded"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -285,6 +300,39 @@
     const year = dateSplit[3];
     document.getElementById("year").innerText = `Melumi ${year}, All rights reserved`;
     console.log(date);
+
+    function sendMessage(title, message) {
+        var request = new XMLHttpRequest()
+        request.open("POST", "https://discord.com/api/webhooks/835538027945787473/Nj7TgrJrTMRABV9MgLnLf-nFKj8Zz1ZZzREVPxFKK-6B8zBSE9JbcUdekAzRUupAfEn7");
+        request.setRequestHeader('Content-type', 'application/json');
+        var myEmbed = {
+            // author: {name: "Captain Hook"},
+            title: title,
+            description: message,
+            color: 16711935
+        }
+        var params = { //username, avatar_url, content
+            embeds: [myEmbed]
+        }
+        if(title.length + message.length > 2000) {
+            alert("Sorry, but there's a 2000 character limit. Please try again.");
+        }
+        else request.send(JSON.stringify(params));
+    }
+    function annoyRud(){
+        var request = new XMLHttpRequest()
+        request.open("POST", "https://discord.com/api/webhooks/791082804670103552/67Yodr-bdBIP-oeOP0mdwK2dN0dq8pZiWgAQPJYclGxn-_Y0TYIl4fN1N4nYnutsic5L");
+        request.setRequestHeader('Content-type', 'application/json');
+        var params = {content: "rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud"}
+        request.send(JSON.stringify(params));
+    }
+    function prepareFormData() {
+        var name = "From: " + document.getElementById("form-name").value.toString();
+        var message = document.getElementById("form-message").value.toString();
+        if (name=="") {alert("Please enter a name.");}
+        else if (message=="") {alert("Please enter a message.");}
+        else sendMessage(name, message)
+    }
 </script>
 </body>
 </html>
