@@ -4,7 +4,7 @@
     <!-- Required meta tags-->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0<!--, maximum-scale=1.0, user-scalable=0-->" name="viewport" />
     <meta name="viewport" content="width=device-width" />
     <meta name="author" content="Melumi">
     <meta name="description" content="Melumi's personal website">
@@ -21,7 +21,7 @@
     <meta content="#ff00ff" data-react-helmet="true" name="theme-color">
     <!-- CSS and stuff -->
     <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/2f5edf07d6.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/2f5edf07d6.js" crossorigin="anonymous"></script>
 </head>
 <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-set-preferred-mode-onload="true">
 <!-- Page wrapper start -->
@@ -181,6 +181,13 @@
             <audio id="memeAudio">
                 <source src="https://archive.org/download/savurduyarranimp370k/Savurdu%20Yarrani%28MP3_70K%29.mp3" type="audio/mpeg">
             </audio>
+
+            <!-- About me -->
+            <h1 id="about-title" class="content-title text-center">About me</h1>
+            <div class="m-auto text-center" style="width:80%">
+                <p>Hi, my name is Melumi and I like to make cool things! I have experience using Python, Java, HTML, and some other things like Blender. I'm currently learning how to build websites with HTML, and I started making this very webpage not long ago! Besides coding, I enjoy playing videogames and listening to music.</p>
+            </div>
+
             <!-- My Projects -->
             <h1 id="my-projects" class="content-title text-center">My Projects</h1>
             <!-- Cards -->
@@ -194,7 +201,7 @@
                             <h2 class="card-title">Fegg Bot</h2>
                             <p>My custom discord bot that features a multiplayer fighting game. The players attack each other with dice rolls, and this bot is good for roleplaying fights. The bot is written in python using discord.py and it was made for a private server I'm in.</p>
                             <div class="text-right"> <!-- text-right = text-align: right -->
-                            <a href="https://github.com/Melumi11/Fegg" class="btn btn-primary">Read more</a>
+                            <a href="https://github.com/Melumi11/Fegg" class="btn btn-primary">About Fegg</a>
                             </div>
                         </div>
                     </div>
@@ -236,14 +243,11 @@
                     </div>
                 </div>
             </div>
-            <!-- About me -->
-            <h1 id="about-title" class="content-title text-center">About me</h1>
-            <div class="m-auto text-center" style="width:80%">
-                <p>Hi, my name is Melumi and I like to make cool things! I have experience using Python, Java, HTML, and some other things like Blender. I'm currently learning how to build websites with HTML, and I started making this very webpage not long ago! Besides coding, I enjoy playing videogames and listening to music.</p>
-            </div>
-            <div class="spacer-lg"></div>
+
             <!-- Contact -->
             <h1 id="contact-title" class="content-title text-center">Contact</h1>
+
+            <!-- Send me a message -->
             <div class="container">
                 <div class="form-group">
                     <p class="text-center">Send me a message:</p>
@@ -259,6 +263,7 @@
                 </div>
             </div>
             <p class="text-center">Discord: <strong>@Melumi#5395 (@640714673045504020)</strong></p>
+
             <!-- Social Links -->
             <div class="text-center">
                 <div class="btn-group" role="group" aria-label="Accounts">
@@ -290,7 +295,7 @@
 <!-- Page wrapper end -->
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 <!-- Tracking -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
     // ;)
     var rand = Math.random()
