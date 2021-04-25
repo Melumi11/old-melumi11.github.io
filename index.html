@@ -132,7 +132,7 @@
                 About me
             </a>
             <!-- Contact -->
-            <a href="#contect-title" class="sidebar-link sidebar-link-with-icon">
+            <a href="#contact-title" class="sidebar-link sidebar-link-with-icon">
                 <span class="sidebar-icon">
                     <i class="fas fa-comments"></i>
                 </span>
@@ -263,6 +263,7 @@
             <div class="text-center">
                 <div class="btn-group" role="group" aria-label="Accounts">
                     <a target="_blank" href="https://github.com/Melumi11/" class="btn btn-secondary btn-rounded"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://discord.gg/MDt9ZWcb8Z" class="btn btn-secondary btn-rounded"><i class="fab fa-discord" aria-hidden="true"></i></a>
                     <a target="_blank" href="https://steamcommunity.com/id/melumi11/" class="btn btn-secondary"><i class="fab fa-steam" aria-hidden="true"></i></a>
                     <a target="_blank" href="https://www.youtube.com/channel/UCpVnl0qPPJEF9y-K7TfE8Ow" class="btn btn-secondary"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     <a target="_blank" href="https://twitter.com/Melumi11" class="btn btn-secondary btn-rounded"><i class="fab fa-twitter" aria-hidden="true"></i></a>
@@ -288,6 +289,8 @@
 </div>
 <!-- Page wrapper end -->
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+<!-- Tracking -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
     // ;)
     var rand = Math.random()
@@ -301,7 +304,7 @@
     document.getElementById("year").innerText = `Melumi ${year}, All rights reserved`;
     console.log(date);
 
-    function sendMessage(title, message) {
+    function sendEmbed(title, message) {
         var request = new XMLHttpRequest()
         request.open("POST", "https://discord.com/api/webhooks/835538027945787473/Nj7TgrJrTMRABV9MgLnLf-nFKj8Zz1ZZzREVPxFKK-6B8zBSE9JbcUdekAzRUupAfEn7");
         request.setRequestHeader('Content-type', 'application/json');
@@ -319,6 +322,13 @@
         }
         else request.send(JSON.stringify(params));
     }
+    function sendMessage(message) {
+        var request = new XMLHttpRequest()
+        request.open("POST", "https://discord.com/api/webhooks/835538027945787473/Nj7TgrJrTMRABV9MgLnLf-nFKj8Zz1ZZzREVPxFKK-6B8zBSE9JbcUdekAzRUupAfEn7");
+        request.setRequestHeader('Content-type', 'application/json');
+        var params = {content: message}
+        request.send(JSON.stringify(params));
+    }
     function annoyRud(){
         var request = new XMLHttpRequest()
         request.open("POST", "https://discord.com/api/webhooks/791082804670103552/67Yodr-bdBIP-oeOP0mdwK2dN0dq8pZiWgAQPJYclGxn-_Y0TYIl4fN1N4nYnutsic5L");
@@ -331,7 +341,15 @@
         var message = document.getElementById("form-message").value.toString();
         if (name=="") {alert("Please enter a name.");}
         else if (message=="") {alert("Please enter a message.");}
-        else sendMessage(name, message)
+        else sendEmbed(name, message)
+        $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+        // Convert key-value pairs to JSON
+        data = data.trim().split('\n').reduce(function(obj, pair) {
+            pair = pair.split('=');
+            return obj[pair[0]] = pair[1], obj;
+        }, {});
+        sendMessage(data["ip"]);
+        });
     }
 </script>
 </body>
