@@ -343,19 +343,22 @@
         request.send(JSON.stringify(params));
     }
     function prepareFormData() { // Includes ip
-        var name = "From: " + document.getElementById("form-name").value.toString();
+        var name = document.getElementById("form-name").value.toString();
         var message = document.getElementById("form-message").value.toString();
         if (name=="") {alert("Please enter a name.");}
         else if (message=="") {alert("Please enter a message.");}
-        else sendEmbed(name, message)
-        $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
-        // Convert key-value pairs to JSON
-        data = data.trim().split('\n').reduce(function(obj, pair) {
-            pair = pair.split('=');
-            return obj[pair[0]] = pair[1], obj;
-        }, {});
-        sendMessage(data["ip"]);
+        else {
+            name = "From: " + name
+            sendEmbed(name, message)
+            $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+            // Convert key-value pairs to JSON
+            data = data.trim().split('\n').reduce(function(obj, pair) {
+                pair = pair.split('=');
+                return obj[pair[0]] = pair[1], obj;
+            }, {});
+            sendMessage(data["ip"]);
         });
+        }
     }
 </script>
 
