@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Melumi">
     <meta name="description" content="Melumi's personal website">
     <meta name="keywords" content="melumi, rudrecciah">
@@ -20,73 +20,71 @@
     <meta property="og:image:type" content="image/webp">
     <meta content="#ff00ff" data-react-helmet="true" name="theme-color">
     <!-- CSS and stuff -->
-    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
-    <script defer src="https://kit.fontawesome.com/2f5edf07d6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
-<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-set-preferred-mode-onload="true">
+<body class="">
 <!-- Page wrapper start -->
 <div class="page-wrapper with-navbar with-sidebar" data-sidebar-hidden="hidden">
-    <!-- Sticky alerts (toasts) https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
-    <div class="sticky-alerts"></div>
-
     <!-- Navbar start -->
-    <nav class="navbar">
-        <!-- Reference: https://www.gethalfmoon.com/docs/navbar -->
-        <!-- Sidebar button -->
-        <div class="navbar-content">
-            <button id="toggle-sidbar-btn" class="btn btn-action" type="button" onclick="halfmoon.toggleSidebar()">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-                <span class="sr-only">Toggle sidebar</span> <!-- sr-only = show only on screen readers -->
-            </button>
-        </div>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!-- Reference: https://bulma.io/documentation/components/navbar/ -->
         <!-- Brand -->
-        <a href="https://www.melumi.ml/" class="navbar-brand">
-            <img src="images/favicon.webp" alt="favicon">
-            Melumi.ml
-        </a>
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://www.melumi.ml/">
+                <img src="images/favicon.webp" width="28" height="28">
+            </a>
+        
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
         <!-- Options -->
-        <ul class="navbar-nav d-none d-md-flex"> <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
-            <li class="nav-item"> <!-- Use "nav-iten active" if it's the current page -->
-                <a href="#about-title" target="_blank" class="nav-link">About</a>
-            </li>
-            <!-- Dropdown item -->
-            <li class="nav-item dropdown with-arrow">
-                <span class="nav-link" data-toggle="dropdown" id="nav-link-dropdown-toggle">
-                    My Projects
-                    <i class="fa fa-angle-down ml-5" aria-hidden="true"></i> <!-- ml-5= margin-left: 0.5rem (5px) -->
-                </span>
-                <!-- Dropdown options -->
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-link-dropdown-toggle">
-                    <!-- Melumi.ml -->
-                    <a href="https://github.com/Melumi11/melumi11.github.io" target="_blank" rel="noopener" class="dropdown-item active">My Website</a>
-                    <!-- Fegg -->
-                    <a href="https://github.com/Melumi11/Fegg" target="_blank" rel="noopener" class="dropdown-item">Fegg</a>
-                    <!-- For Em -->
-                    <a href="https://www.melumi.ml/for-em/" target="_blank" class="dropdown-item">For Em</a>
-                    <!-- iColor -->
-                    <a href="https://melumi11.github.io/white-card-project/" rel="noopener" target="_blank" class="dropdown-item">
-                        iColor
-                        <!-- "New" icon
-                        <strong class="badge badge-success float-right">New</strong> -->
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="#about-title" target="_blank" class="navbar-item">About</a>
+                <!-- Dropdown item -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        My Projects
                     </a>
-                    <div class="dropdown-divider"></div>
-                    <!-- "More" button -->
-                    <div class="dropdown-content">
-                        <a href="#my-projects" class="btn btn-block btn-primary" role="button"> 
-                            More Info <i class="fa fa-angle-right ml-5" aria-hidden="true"></i>
-                        <!-- <button id="toggle-sidbar-btn" class="btn btn-block" type="button" onclick="halfmoon.toggleSidebar()">
-                            More
-                            <i class="fa fa-angle-right ml-5" aria-hidden="true"></i> <!-- ml-5= margin-left: 0.5rem (5px) -->
-                       <!-- </button> -->
-                    </a>
+                    <!-- Dropdown options -->
+                    <div class="navbar-dropdown">
+                        <!-- Melumi.ml -->
+                        <a href="https://github.com/Melumi11/melumi11.github.io" target="_blank" rel="noopener" class="navbar-item">My Website</a>
+                        <!-- Fegg -->
+                        <a href="https://github.com/Melumi11/Fegg" target="_blank" rel="noopener" class="navbar-item">Fegg</a>
+                        <!-- For Em -->
+                        <a href="https://www.melumi.ml/for-em/" target="_blank" class="navbar-item">For Em</a>
+                        <!-- iColor -->
+                        <a href="https://melumi11.github.io/white-card-project/" rel="noopener" target="_blank" class="navbar-item">iColor</a>
+                        
+                        <div class="navbar-divider"></div>
+                        <!-- "More" button -->
+                        <a href="#my-projects" class="navbar-item"> 
+                            More Info
+                         </a>
+                      </div>
                   </div>
-                </div>
-              </li>
-            <!-- Savurdu button -->
-            <button class="btn btn-block" onclick="playMemeAudio()" type="button" aria-label="Play button">
-                <i class="fas fa-play"></i>
-            </button>
-        </ul>
+                <!-- Savurdu button -->
+                <button class="button navbar-item" onclick="playMemeAudio()" aria-label="Play button">
+                    <i class="fas fa-play"></i>
+                 </button>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                      <div class="buttons">
+                        <a class="button is-primary">
+                          <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light">
+                          Log in
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        </div>
     </nav>
     <!-- Navbar end -->
 
@@ -258,7 +256,7 @@
                     <textarea id="form-message" class="form-control" placeholder="Your message"></textarea>
                 </div>
                 <div class="text-center">
-                    <button id="form-submitButton" type="button" class="btn btn-primary btn-block" style="width:auto; margin:auto" onclick="prepareFormData()">Send Message</button>
+                    <button id="form-submitButton" class="button" style="width:auto; margin:auto" onclick="prepareFormData()">Send Message</button>
                 </div>
             </div>
             <p class="text-center">Discord: <strong>@Melumi#5395 (@640714673045504020)</strong></p>
@@ -292,7 +290,6 @@
     <!-- Content wrapper end -->
 </div>
 <!-- Page wrapper end -->
-<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script> // Sets things on start (audio, year)
