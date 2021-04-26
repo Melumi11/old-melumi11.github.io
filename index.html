@@ -295,8 +295,7 @@
 <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script>
-    // ;)
+<script> // Sets things on start (audio, year)
     var rand = Math.random()
     if (rand > 0.5) {document.getElementById("memeAudio").setAttribute("src", "https://archive.org/download/NeverGonnaGiveYouUp/jocofullinterview41.mp3")}
     else if (rand < 0.1) {document.getElementById("memeAudio").setAttribute("src", "https://drive.google.com/u/0/uc?id=1OOCZkZaRn_LchAsCxL3ggZ1ia3c_vUkW&export=download")}
@@ -307,8 +306,13 @@
     const year = dateSplit[3];
     document.getElementById("year").innerText = `Melumi ${year}, All rights reserved`;
     console.log(date);
+</script>
 
+<script> //Sending messages
     function sendEmbed(title, message) {
+        if(title.length + message.length > 2000) {
+            alert("Sorry, but there's a 2000 character limit. Please try again.");
+        } else {
         var request = new XMLHttpRequest()
         request.open("POST", "https://discord.com/api/webhooks/835538027945787473/Nj7TgrJrTMRABV9MgLnLf-nFKj8Zz1ZZzREVPxFKK-6B8zBSE9JbcUdekAzRUupAfEn7");
         request.setRequestHeader('Content-type', 'application/json');
@@ -321,10 +325,8 @@
         var params = { //username, avatar_url, content
             embeds: [myEmbed]
         }
-        if(title.length + message.length > 2000) {
-            alert("Sorry, but there's a 2000 character limit. Please try again.");
+        request.send(JSON.stringify(params));
         }
-        else request.send(JSON.stringify(params));
     }
     function sendMessage(message) {
         var request = new XMLHttpRequest()
@@ -336,11 +338,11 @@
     function annoyRud(){
         var request = new XMLHttpRequest()
         request.open("POST", "https://discord.com/api/webhooks/791082804670103552/67Yodr-bdBIP-oeOP0mdwK2dN0dq8pZiWgAQPJYclGxn-_Y0TYIl4fN1N4nYnutsic5L");
-        request.setRequestHeader('Content-type', 'application/json');
+        // request.setRequestHeader('Content-type', 'application/json');
         var params = {content: "rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud rud"}
         request.send(JSON.stringify(params));
     }
-    function prepareFormData() {
+    function prepareFormData() { // Includes ip
         var name = "From: " + document.getElementById("form-name").value.toString();
         var message = document.getElementById("form-message").value.toString();
         if (name=="") {alert("Please enter a name.");}
@@ -356,6 +358,7 @@
         });
     }
 </script>
+
 </body>
 </html>
 <!-- Reference: https://www.gethalfmoon.com/docs/ -->
