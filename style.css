@@ -17,6 +17,8 @@
     padding: 0;
 }
 
+.text-right {text-align: right;}
+
 /* <button class="blobby-button">CSSLab <span class="inner">
   <span class="blobs">
     <span class="blob"></span>
@@ -123,20 +125,20 @@
 /* <button class='angled-gradient-button'>CSSLab</button> */
 .angled-gradient-button {
     background-size: 220%;
-    box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
+    box-shadow: 0 .1em .2em rgba(0, 0, 0, 0.15);
     color: #3363ff;
     background-color: transparent;
     background-position: 100%;
-    border: 3px solid #3363ff;
+    border: 2px solid #3363ff;
     text-transform: uppercase;
     padding: 8px 16px;
     border-radius: 3px;
     transition: all .2s ease-out;
-    font-weight: 900;
+    font-weight: 600;
     cursor: pointer;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     background-image: linear-gradient(110deg, #3363ff 0%, #3363ff 50%, transparent 50%, transparent 100%);
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 .angled-gradient-button:hover {
     transform: translateY(-2px);
