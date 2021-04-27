@@ -1,0 +1,263 @@
+.menu {
+    position: sticky;
+    display: inline-block;
+    vertical-align: top;
+    max-height: 100vh;
+    overflow-y: auto;
+    width: 240px;
+    min-width: 180px;
+    top: 80px;
+    bottom: 0;
+    padding-left: 25px;
+}
+
+.content {
+    display: inline-block;
+    background-color: white;
+    padding: 0;
+}
+
+/* <button class="blobby-button">CSSLab <span class="inner">
+  <span class="blobs">
+    <span class="blob"></span>
+ <span class="blob"></span>
+ <span class="blob"></span>
+
+    <span
+    class="blob"></span>
+        </span>
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
+                    result="goo"></feColorMatrix>
+                    <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                </filter>
+            </defs>
+        </svg>
+</button> */
+.blobby-button {
+    overflow: hidden;
+    outline: none;
+    display: flex;
+    color: #9a02ff;
+    background-color: transparent;
+    text-align: center;
+    position: relative;
+    border: none;
+    padding: 1em 2em;
+    border-radius: 4px;
+    transition: color calc(0.5s * .75);
+    font-weight: 900;
+    cursor: pointer;
+    align-items: center;
+    letter-spacing: 2px;
+    justify-content: center;
+    z-index: 1;
+    font-size: 16px;
+}
+.blobby-button .blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+}
+.blobby-button .blob:nth-child(1) {
+    left: 0;
+    transition-delay: 0;
+}
+.blobby-button .blob:nth-child(2) {
+    left: calc(120% / 4);
+    transition-delay: calc((0.5s * .12) * 1);
+}
+.blobby-button .blob:nth-child(3) {
+    left: calc(2 * (120% / 4));
+    transition-delay: calc((0.5s * .12) * 2);
+}
+.blobby-button:hover .blob {
+    transform: translateZ(0) scale(1.7);
+}
+.blobby-button .blob:nth-child(4) {
+    left: calc(3 * (120% / 4));
+    transition-delay: calc((0.5s * .12) * 3);
+}
+.blobby-button:before {
+    width: 100%;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    border: 3px solid #9a02ff;
+    border-radius: 4px;
+    top: 0;
+    content: "";
+    z-index: 1;
+}
+.blobby-button .blob {
+    position: absolute;
+    top: 3px;
+    width: calc(100% / 4);
+    height: 100%;
+    background: #9a02ff;
+    border-radius: 100%;
+    transform: translate3d(0,150%,0) scale(1.7);
+    transition: transform 0.5s;
+}
+.blobby-button:hover {
+    color: #fff;
+}
+.blobby-button > svg {
+    display: none;
+}
+.blobby-button .inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* <button class='angled-gradient-button'>CSSLab</button> */
+.angled-gradient-button {
+    background-size: 220%;
+    box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
+    color: #3363ff;
+    background-color: transparent;
+    background-position: 100%;
+    border: 3px solid #3363ff;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 3px;
+    transition: all .2s ease-out;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-image: linear-gradient(110deg, #3363ff 0%, #3363ff 50%, transparent 50%, transparent 100%);
+    font-size: 14px;
+}
+.angled-gradient-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 .3em rgba(0, 0, 0, 0.25);
+    background-position: 0;
+    color: #fff;
+}
+.angled-gradient-button:active {
+    transform: translateY(-1px);
+}
+
+.swing-modal .modal--active {
+    transform: rotateX(0);
+    opacity: 1;
+}
+
+.swing-modal .modal-content-button:hover {
+    background-color: rgba(0,0,0,.1);
+}
+
+.swing-modal .modal-content-button {
+    color: #fff;
+    background-color: rgba(0,0,0,.2);
+    border: 0;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color .2s ease;
+    margin-top: auto;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.swing-modal .modal {
+    overflow: hidden;
+    display: flex;
+    min-height: 300px;
+    color: #fff;
+    background-color: #477db3;
+    width: 600px;
+    transform-origin: 50% 0%;
+    position: relative;
+    flex-direction: column;
+    border-radius: 4px;
+    transition: all .6s cubic-bezier(0.34, 1.6, 0.64, 1);
+    cursor: default;
+    z-index: 999;
+}
+
+.swing-modal .modal-content p {
+    margin: 0;
+}
+
+.swing-modal .modal:not(.modal--active) {
+    opacity: 0;
+    transform: rotateX(-90deg);
+}
+
+.swing-modal .push-button-3d:active {
+    box-shadow: 0 1px #840094;
+    transform: translateY(3px);
+}
+
+.swing-modal .push-button-3d {
+    box-shadow: 0 4px #840094;
+    color: rgba(255,255,255,.8);
+    background-color: #B600CD;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .2s ease;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.swing-modal .modal-background:not(.modal-background--active) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.swing-modal button {
+    outline: none;
+    border: none;
+}
+
+.swing-modal .modal-background--active {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0,0,0,.7);
+    backdrop-filter: blur(3px);
+}
+
+.swing-modal .modal-content {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.swing-modal .modal-background {
+    display: flex;
+    width: 100vw;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    top: 0;
+    transition: all .4s ease;
+    cursor: crosshair;
+    align-items: center;
+    perspective: 1300px;
+    justify-content: center;
+    z-index: 999;
+}
+
+.swing-modal .modal-header {
+    margin: 0;
+    background-color: rgba(0,0,0,.3);
+    padding: 10px;
+}
