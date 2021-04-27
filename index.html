@@ -28,7 +28,7 @@
 <div class="swing-modal">
     <div class="modal-background">
         <div class="modal" id="csslab-swing-modal">
-                <h3 class="modal-header">Placeholder Modal Text.</h3>
+            <h3 class="modal-header">Placeholder Modal Text.</h3>
 
             <div class="modal-content">
                 <p>Modal content goes here!</p>
@@ -106,7 +106,7 @@
     </div>
 </nav>
 <!-- Navbar end -->
-<button class="modal-swing-button push-button-3d" data-id="csslab-swing-modal">Open Modal</button>
+
 <div class="columns" style="margin:0">
 <!-- Menu (sidebar) start -->
 <aside class="menu">
@@ -267,6 +267,7 @@
         <h1 id="contact-title" class="title">Contact</h1>
 
         <!-- Send me a message -->
+        <button class="modal-swing-button push-button-3d" data-id="csslab-swing-modal">Open Modal</button>
         <div class="container">
             <div class="form-group">
                 <p class="">Send me a message:</p>
@@ -298,15 +299,13 @@
 </div>
 <!-- Content wrapper end -->
 <!-- Navbar bottom -->
-<div class="navbar is-light">
-    <div class="navbar-end">
-        <li class="navbar-item">
-            <a href="https://rudrecciah.dev/" target="_blank" rel="noopener">RudRecciah</a>
-        </li>
-        <span class="navbar-item">
-            &copy; <span id="year"></span>
-        </span>
-    </div>
+<div class="footer">
+    <div class="has-text-centered">
+        <p>
+          <strong>Melumi.ml</strong> by <a href="https://www.melumi.ml">Roy Huang</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a> &copy;<span id="year"></span>
+        </p>
+      </div>
 </div>
 <!-- Random Audio Player -->
 <audio id="memeAudio">
@@ -323,7 +322,7 @@
     function playMemeAudio() {document.getElementById("memeAudio").play();} 
 
     const date = Date();
-    const dateSplit = date.split("");
+    const dateSplit = date.split(" ");
     const year = dateSplit[3];
     document.getElementById("year").innerText = `Melumi ${year}, All rights reserved`;
     console.log(date);
