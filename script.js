@@ -1,15 +1,18 @@
-// Sets things on start (audio, year)
-var rand = Math.random()
-if (rand > 0.7) {document.getElementById("memeAudio").setAttribute("src","https://archive.org/download/NeverGonnaGiveYouUp/jocofullinterview41.mp3")}
-else if (rand < 0.5) {document.getElementById("memeAudio").setAttribute("src","https://drive.google.com/u/0/uc?id=1OOCZkZaRn_LchAsCxL3ggZ1ia3c_vUkW&export=download")}
-else if (rand <= 0.7) {document.getElementById("memeAudio").setAttribute("src", "https://archive.org/download/savurduyarranimp370k/Savurdu%20Yarrani%28MP3_70K%29.mp3")}
-function playMemeAudio() {document.getElementById("memeAudio").play();} 
+function setAudio() {
+    var rand = Math.random()
+    if (rand > 0.7) {document.getElementById("memeAudio").setAttribute("src","https://archive.org/download/NeverGonnaGiveYouUp/jocofullinterview41.mp3")}
+    else if (rand < 0.5) {document.getElementById("memeAudio").setAttribute("src","https://drive.google.com/u/0/uc?id=1OOCZkZaRn_LchAsCxL3ggZ1ia3c_vUkW&export=download")}
+    else if (rand <= 0.7) {document.getElementById("memeAudio").setAttribute("src", "https://archive.org/download/savurduyarranimp370k/Savurdu%20Yarrani%28MP3_70K%29.mp3")}
+}
+function playMemeAudio() {document.getElementById("memeAudio").play();}
 
-const date = Date();
-const dateSplit = date.split(" ");
-const year = dateSplit[3];
-document.getElementById("year").innerText = `Melumi ${year}, All rights reserved`;
-console.log(date);
+function setCopyright() {
+    const date = Date();
+    const dateSplit = date.split(" ");
+    const year = dateSplit[3];
+    document.getElementById("year").innerText = `Melumi ${year}, All rights reserved`;
+    console.log(date);
+}
 
 //Sending messages
 function sendEmbed(title, message) {
