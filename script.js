@@ -1,7 +1,7 @@
 function setAudio() {
     var rand = Math.random()
-    if (rand < 0.65) {document.getElementById("memeAudio").setAttribute("src","https://archive.org/download/NeverGonnaGiveYouUp/jocofullinterview41.mp3")}
-    else if (rand < 0.4) {document.getElementById("memeAudio").setAttribute("src","https://drive.google.com/u/0/uc?id=1OOCZkZaRn_LchAsCxL3ggZ1ia3c_vUkW&export=download")}
+    if (rand < 0.4) {document.getElementById("memeAudio").setAttribute("src","https://drive.google.com/u/0/uc?id=1OOCZkZaRn_LchAsCxL3ggZ1ia3c_vUkW&export=download")}
+    else if (rand < 0.65) {document.getElementById("memeAudio").setAttribute("src","https://archive.org/download/NeverGonnaGiveYouUp/jocofullinterview41.mp3")}
     else if (rand < 0.75) {document.getElementById("memeAudio").setAttribute("src", "https://archive.org/download/savurduyarranimp370k/Savurdu%20Yarrani%28MP3_70K%29.mp3")}
     else {document.getElementById("memeAudio").setAttribute("src", "https://archive.org/download/among-us-drip-theme-song-original-among-us-trap-remix-amogus-meme-music_202110/Among%20Us%20Drip%20Theme%20Song%20Original%20Among%20Us%20Trap%20Remix%20%20Amogus%20Meme%20Music.mp3")}
 }
